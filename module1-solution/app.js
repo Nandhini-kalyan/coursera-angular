@@ -4,6 +4,7 @@
     .module("lunchCheck", [])
 
     .controller("checkController", checkController);
+  checkController.$injector = ["$scope"];
 
   function checkController($scope) {
     $scope.listOfItems = "";
