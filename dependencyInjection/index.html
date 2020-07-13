@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="calculatorApp">
+<html lang="en" ng-app="DIApp">
 
 <head>
     <meta charset="UTF-8">
@@ -11,8 +11,7 @@
 
 <body>
     <h1>welcome to my first angular app</h1>
-    <div ng-controller="calculatorController"> Name:<input type="text" ng-model="name" ng-keyup="display()">
-        <p>Total Numerical value in your name is:{{total}}</p>
+    <div ng-controller="DIController"> Name:<input type="text" ng-model="name" ng-blur="upper()">
     </div>
 </body>
 
