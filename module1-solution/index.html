@@ -1,18 +1,36 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="calculatorApp">
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lunch box check</title>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- angular cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.0/angular.min.js"></script>
+    <!-- connecting javascript file -->
     <script src=app.js></script>
+    <style>
+        .message {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
-<body>
-    <h1>welcome to my first angular app</h1>
-    <div ng-controller="calculatorController"> Name:<input type="text" ng-model="name" ng-keyup="display()">
-        <p>Total Numerical value in your name is:{{total}}</p>
+<body ng-app="lunchCheck">
+    <div class="container" ng-controller="checkController">
+        <h1>Lunch Checker</h1>
+        <div class="form-group">
+            <input id="lunch-menu" type="text" placeholder="list comma separated dishes you usually have for lunch"
+                class="form-control" ng-model="listOfItems"><span>Empty string or whitespace are not considered as
+                item</span>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" ng-click="main()">Check If Too Much</button>
+        </div>
+        <div class="form-group message"> {{result}} </div>
     </div>
 </body>
 
