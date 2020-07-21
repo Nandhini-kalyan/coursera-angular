@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="shoppingListApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list app</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.0/angular.min.js"></script>
+    <script src=app.js></script>
+</head>
+
+<body ng-controller="shoppingController">
+    <input type="text" ng-model="search" placeholder="search">
+    <ul>
+        <li ng-repeat="item in shoppingList1|filter:search">{{item}}</li>
+    </ul>
+    <ul>
+        <li ng-repeat="item in shoppingList2">{{item.quantity}} of {{item.item}}</li>
+    </ul>
+    <input type="text" ng-model="newItem" placeholder="new item">
+    <input type="text" ng-model="newQuantity" placeholder="number of item">
+    <button ng-click="addItem()">add</button>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter array</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.0/angular.min.js"></script>
+    <script src=app.js></script>
+</head>
+
+<body ng-app="shoppingList">
+    <div ng-controller="shoppingListAddItems as itemAdder">
+        <input type="text" placeholder="item name" ng-model="itemAdder.itemName">
+        <input type="text" placeholder="item quantity" ng-model="itemAdder.quantity">
+        <button ng-click="itemAdder.addItem()">okay</button>
+    </div>
+    <div ng-controller="shoppingListShowItems as itemShow">
+        <ol>
+            <li ng-repeat="item in itemShow.items"> {{item.quantity}} of {{item.itemName}} <button
+                    ng-click="itemShow.removeItem($index)">remove</button></li>
+        </ol>
+    </div>
+</body>
+
+</html>

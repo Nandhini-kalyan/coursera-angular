@@ -11,8 +11,10 @@
 
 <body>
     <h1>welcome to my first angular app</h1>
-    <div ng-controller="calculatorController"> Name:<input type="text" ng-model="name" ng-keyup="display()">
+    <div ng-controller="calculatorController"> {{original}}<br> {{change}}<br>
+        {{original|truth:"like":"hate"|uppercase}}<br>Name:<input type="text" ng-model="name" ng-keyup="display()">
         <p>Total Numerical value in your name is:{{total}}</p>
+        <button ng-click="watchers()">no of watchers</button>
     </div>
 </body>
 
