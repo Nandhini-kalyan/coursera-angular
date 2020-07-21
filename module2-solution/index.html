@@ -45,7 +45,7 @@
                             ng-click="toBuy.boughtFunc($index)" class="btn btn-primary"><span
                                 class="glyphicon glyphicon-ok"></span> Bought</button></li>
                 </ul>
-                <div class="emptyMessage" ng-if="toBuy.status">{{toBuy.status}}</div>
+                <div class="emptyMessage" ng-if="toBuy.toBuyArr.length==0">everything is bought</div>
             </div>
             <!-- Already Bought List -->
             <div class="col-md-6" ng-controller="alreadyBoughtController as bought">
@@ -53,7 +53,7 @@
                 <ul>
                     <li ng-repeat="item in bought.boughtArr">Bought {{item.quantity}} {{item.name}}</li>
                 </ul>
-                <div class="emptyMessage" ng-if="bought.status()==false">Nothing bought yet</div>
+                <div class="emptyMessage" ng-if="bought.boughtArr.length==0">Nothing bought yet</div>
             </div>
         </div>
     </div>

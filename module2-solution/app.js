@@ -13,11 +13,7 @@
     toBuy.toBuyArr = shoppingListService.getToBuyArr();
 
     toBuy.boughtFunc = function (index) {
-      try {
-        shoppingListService.boughtFunc(index);
-      } catch (error) {
-        toBuy.status = error.message;
-      }
+      shoppingListService.boughtFunc(index);
     };
   }
 
@@ -26,13 +22,6 @@
     var bought = this;
 
     bought.boughtArr = shoppingListService.getboughtArr();
-    bought.status = function () {
-      if (bought.boughtArr.length == 0) {
-        return false;
-      } else {
-        return true;
-      }
-    };
   }
 
   function shoppingListService() {
@@ -55,11 +44,6 @@
     service.boughtFunc = function (index) {
       boughtArr.push(toBuyArr[index]);
       toBuyArr.splice(index, 1);
-
-      if (toBuyArr.length == 0) {
-        console.log("error in toBuy");
-        throw new Error("everything is bought!");
-      }
     };
   }
 })();
