@@ -41,7 +41,11 @@
           var menu = response.data.menu_items;
 
           menu.forEach(function (item) {
-            if (item.description.includes(searchTerm)) {
+            if (
+              item.description
+                .toLowerCase()
+                .indexOf(searchTerm.toLowerCase()) !== -1
+            ) {
               foundItems.push(item);
             }
           });
