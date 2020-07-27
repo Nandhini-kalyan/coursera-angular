@@ -1,0 +1,8 @@
+<br><br><br>
+<div ng-if="found.length==0" class="jumbotron text-center">Nothing found!!!</div>
+<div class="row">
+    <div ng-repeat="item in found" class="col-md-3 m-3 p-3 bg-dark text-white"> Name :{{item.name}} <br>Short name :
+        {{item.short_name}} <br>Description :{{item.description}}<br><button class="btn btn-danger mb-0"
+            ng-click="onRemove({index:$index})">Don't want this one!</button><br>
+    </div>
+</div>
