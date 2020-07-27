@@ -12,7 +12,11 @@
   function NarrowItDownController(MenuSearchService) {
     var list = this;
     list.getMatchedMenuItems = function (searchTerm) {
-      list.found = MenuSearchService.getMatchedMenuItems(searchTerm);
+      if (searchTerm === "") {
+        list.found = [];
+      } else {
+        list.found = MenuSearchService.getMatchedMenuItems(searchTerm);
+      }
     };
     list.removeItem = function (itemIndex) {
       MenuSearchService.removeItem(itemIndex);
