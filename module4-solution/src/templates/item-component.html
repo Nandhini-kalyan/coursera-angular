@@ -1,3 +1,4 @@
-<ul>
-    <li ng-repeat="item in $ctrl.items">{{item.name}} </li>
-</ul>
+<div class="row ">
+    <div class="col-md-3 bg-white text-black m-3 p-3 " ng-repeat="item in $ctrl.items"> Name:{{item.name}} <span
+            class="float-right btn btn-info">Price:${{item.price_large}}</span> </div>
+</div>

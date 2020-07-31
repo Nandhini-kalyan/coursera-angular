@@ -28,14 +28,15 @@
         templateUrl: "src/templates/item.html",
         controller: "itemsController as items",
         params: {
-          categoryName: "DS",
+          categoryName: null,
         },
         resolve: {
           item: [
             "MenuDataService",
+            "$stateParams",
 
-            function (MenuDataService) {
-              return MenuDataService.getItems("L");
+            function (MenuDataService, $stateParams) {
+              return MenuDataService.getItems($stateParams.categoryName);
             },
           ],
         },

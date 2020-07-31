@@ -28,6 +28,7 @@
           shortName +
           "",
       });
+
       var result = response.then(function (response) {
         var menu = response.data.menu_items;
         menu.forEach(function (item) {
