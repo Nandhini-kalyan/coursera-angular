@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Router app</title>
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- angular cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.0/angular.min.js"></script>
+    <!--ui-router cdn-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.27/angular-ui-router.min.js"></script>
+    <!-- connecting javascript file -->
+    <script src=app.js></script>
+    <style>
+        .activeTab {
+            color: red
+        }
+    </style>
+</head>
+
+<body ng-app="routingApp">
+    <div class="tabs">
+        <h1>Routing App Page</h1>
+        <a ui-sref="tab1" ui-sref-active="activeTab">tab 1</a>
+        <a ui-sref="tab2" ui-sref-active="activeTab">tab 2</a>
+    </div>
+    <ui-view></ui-view>
+</body>
+
+</html>
