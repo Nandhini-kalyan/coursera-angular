@@ -8,18 +8,21 @@
   }
 </style>
 <div id="awards-view" class="container">
-  <form name="formName" class="text-danger" novalidate>
+  <form name="formName" class="text-danger ml-auto mr-auto" novalidate>
     <input type="text" name="firstName" ng-model="signUp.firstName" placeholder="first name" required>
     <span ng-if="formName.firstName.$error.required && formName.firstName.$touched"> first name is required</span>
     <input type="text" name="lastName" ng-model="signUp.lastName" placeholder="last name" required>
     <span ng-if="formName.lastName.$error.required && formName.lastName.$touched"> last name is required</span>
     <input type="email" name="emailId" ng-model="signUp.emailId" placeholder="emailId" required>
     <span ng-if="formName.emailId.$invalid && formName.emailId.$touched"> must be a valid email address</span>
+    <input type="text" name="shortName" ng-blur="signUp.validateFavourite()" ng-model="signUp.shortName"
+      placeholder="favourite dish's menu number" required>
+    <span ng-if="signUp.failed.$$state.value=='failure'">enter valid menu number</span>
     <input type="text" name="phoneNumber" ng-model="signUp.phoneNumber" placeholder="phone number #####-#####"
       pattern="(\d{10})" required>
-    <span ng-if="formName.phoneNumber.$invalid&& formName.phoneNumber.$touched"> must be in form #####-#####</span>
-    <input type="text" name="shortName" ng-model="signUp.shortName" placeholder="favourite dish's menu number" required>
-    <button ng-disabled="formName.$invalid" name="butto" ng-click="signUp.go()">submit</button>
+    <span ng-if="formName.phoneNumber.$invalid && formName.phoneNumber.$touched"> must be in form #####-#####</span>
+    <button ng-disabled="(formName.$invalid)||(signUp.failed.$$state.value=='failure')"
+      ng-click="signUp.go()">submit</button>
     <span ng-if="signUp.signedUp">Your information has been saved</span>
   </form>
 </div>

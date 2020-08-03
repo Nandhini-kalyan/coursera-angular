@@ -2,7 +2,7 @@
   <h2 class="text-center"> My Information </h2>
   <div ng-if="!myInfo.signedUp">Not Signed Up Yet. <a ui-sref="public.signUp"> Sign up Now! </a>
   </div>
-  <div ng-if="myInfo.signedUp">
+  <div ng-if="myInfo.signedUp ">
     <p>Name:{{myInfo.firstName}} {{myInfo.lastName}}<br> email Id:{{myInfo.emailId}}<br> phone
       No.:{{myInfo.phoneNumber}}<br> fav menu Number:{{myInfo.shortName}}<br> Your Favourite Dish </p>
     <div>

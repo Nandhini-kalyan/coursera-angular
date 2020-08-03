@@ -7,6 +7,21 @@
   function MenuService($http, ApiPath) {
     var service = this;
     service.signedUp = false;
+    service.validateFavourite = function (dish) {
+      return $http
+        .get(
+          "https://chinese-restaurant-app.herokuapp.com/menu_items/" +
+            dish.toUpperCase() +
+            ".json"
+        )
+        .then(function (response) {
+          return "success";
+        })
+        .catch(function (error) {
+          return "failure";
+        });
+    };
+
     service.getFavItem = function (shortName) {
       return $http
         .get(
