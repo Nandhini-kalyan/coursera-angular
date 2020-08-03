@@ -1,0 +1,16 @@
+<div id="about-view" class="container">
+  <h2 class="text-center"> My Information </h2>
+  <div ng-if="!myInfo.signedUp">Not Signed Up Yet. <a ui-sref="public.signUp"> Sign up Now! </a>
+  </div>
+  <div ng-if="myInfo.signedUp">
+    <p>Name:{{myInfo.firstName}} {{myInfo.lastName}}<br> email Id:{{myInfo.emailId}}<br> phone
+      No.:{{myInfo.phoneNumber}}<br> fav menu Number:{{myInfo.shortName}}<br> Your Favourite Dish </p>
+    <div>
+      <img class="img-responsive card-img-top" width="250" height="150"
+        ng-src="https://chinese-restaurant-app.herokuapp.com/images/{{myInfo.shortName}}.jpg"
+        alt="{{myInfo.item.name}}">
+      <h4>Name:{{myInfo.item.$$state.value.name}}</h4>
+      <p>Description:{{myInfo.item.$$state.value.description}}</p>
+    </div>
+  </div>
+</div>
