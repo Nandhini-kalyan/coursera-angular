@@ -18,9 +18,9 @@
     <input type="text" name="shortName" ng-blur="signUp.validateFavourite()" ng-model="signUp.shortName"
       placeholder="favourite dish's menu number" required>
     <span ng-if="signUp.failed.$$state.value=='failure'">enter valid menu number</span>
-    <input type="text" name="phoneNumber" ng-model="signUp.phoneNumber" placeholder="phone number #####-#####"
-      pattern="(\d{10})" required>
-    <span ng-if="formName.phoneNumber.$invalid && formName.phoneNumber.$touched"> must be in form #####-#####</span>
+    <input type="text" name="phoneNumber" ng-model="signUp.phoneNumber" placeholder="phone number ###-###-####"
+      pattern="(\d{3})-(\d{3})-(\d{4})-" required>
+    <span ng-if="formName.phoneNumber.$invalid && formName.phoneNumber.$touched"> must be in form ###-###-####</span>
     <button ng-disabled="(formName.$invalid)||(signUp.failed.$$state.value=='failure')"
       ng-click="signUp.go()">submit</button>
     <span ng-if="signUp.signedUp">Your information has been saved</span>
